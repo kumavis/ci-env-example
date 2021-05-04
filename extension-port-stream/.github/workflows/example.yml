@@ -1,0 +1,14 @@
+name: Do Example
+on:
+  push:
+    branches: [main]
+
+jobs:
+  example:
+    environment: example-environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Node.js version
+      - env:
+        SECRET: {{ secrets.EXAMPLE_ENV_SECRET }}
+      - run: echo "logging the secret $SECRET"
